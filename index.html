@@ -1,0 +1,89 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<style>
+
+    .start-button {
+     
+        
+      
+        cursor: pointer;
+        width: 30%;
+        border: none;
+        border: none;
+        font-weight: bold;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  align-items: center;
+  width: 90%;
+  height: 90vh;
+  flex-direction: column;
+  gap: 12px;
+ margin-inline: auto;
+}
+
+.child {
+ 
+  height: 200px;
+  width: 250px;
+  border-radius: 12px;
+}
+
+.hex-code {
+    color: #f6f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .random-color-generator {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+</style>
+</head>
+<body>
+<div class="parent shadow-lg p-3 mb-5 bg-body rounded">
+    <h1 class="disply-1">Random Color genertor</h1>
+  <div class="child shadow-lg p-3 mb-5 bg-body rounded"></div>
+  <div><h3 class="hex-code "></h3></div>
+  <button class=" start-button  btn btn-lg btn-warning">Click to Generate random Color</button>
+</div>
+</div>
+
+<script>
+    let generateBtn=document.querySelector(".btn");
+   let childDiv= document.querySelector(".child");
+   
+
+    function randColor() {
+        let color = "";
+        for (let i = 0; i < 6; i++) {
+          color += Math.floor(Math.random() * 16).toString(16);
+        }
+        return "#" + color;
+      }
+
+      let changeColor=()=>
+      {
+        childDiv.style.backgroundColor=randColor();
+        let Hexcode=randColor();
+        let toDisplatHexCode=document.querySelector(".hex-code")
+        toDisplatHexCode.style.backgroundColor="black"
+        toDisplatHexCode.innerHTML= "Hex Value is " + Hexcode;
+        
+      }
+
+      generateBtn.addEventListener('click',changeColor)
+      
+</script>
+</body>
+</html>
