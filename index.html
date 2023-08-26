@@ -47,6 +47,32 @@
     font-weight: bold;
     color: #333;
   }
+
+
+  @media (max-width: 768px) {
+  .parent {
+    width: 100%;
+  }
+
+  .child {
+    width: 100%;
+    height: auto;
+  }
+
+  .start-button {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .h1 {
+    font-size: 36px;
+  }
+
+  .hex-code {
+    font-size: 16px;
+  }
+}
+
   
 </style>
 </head>
@@ -55,7 +81,7 @@
     <h1 class="disply-1">Random Color genertor</h1>
   <div class="child shadow-lg p-3 mb-5 bg-body rounded"></div>
   <div><h3 class="hex-code "></h3></div>
-  <button class=" start-button  btn btn-lg btn-warning">Click to Generate random Color</button>
+  <button class=" start-button  btn btn-lg btn-warning">Generate</button>
 </div>
 </div>
 
